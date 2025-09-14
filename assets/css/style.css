@@ -1,0 +1,153 @@
+body {
+    display: grid;
+    grid-template-rows: 5rem 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.ff-bold {
+    font-family: 'baskerville', Georgia, serif;
+    font-weight: 700;
+}
+
+.ff-regular {
+    font-family: 'baskerville', Georgia, serif;
+    font-weight: 400;
+}
+
+.fs-24 {
+    font-size: var(--fs-24);
+}
+
+.fs-18 {
+    font-size: var(--fs-18);
+}
+
+.fs-15 {
+    font-size: var(--fs-15);
+}
+
+.fs-14 {
+    font-size: var(--fs-14);
+}
+
+.fs-13 {
+    font-size: var(--fs-13);
+}
+
+.fs-12 {
+    font-size: var(--fs-12);
+}
+
+.fs-10 {
+    font-size: var(--fs-10);
+}
+
+.fs-9 {
+    font-size: var(--fs-9);
+}
+
+.lh-11 {
+    line-height: 1.1;
+}
+
+.lh-125 {
+    line-height: 1.25;
+}
+
+.h-full {
+    block-size: 100%;
+}
+
+/* .wrapper__header { */
+/*     height: 3rem; */
+/* } */
+
+.grid__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(0, var(--thumb-img)));
+    grid-auto-rows: 10px;
+    grid-auto-flow: row dense;
+    gap: 40px;
+}
+
+.gallery__item {
+    overflow: hidden;
+    border-radius: var(--spc-100);
+    box-shadow: 0 4px 8px hsl( 0 0% 0% / .5);
+    display: flex;
+    flex-direction: column;
+}
+
+.clamp__gallery{
+    max-inline-size: clamp(20.438rem, -5.6091rem + 106.599vw, 85rem);
+}
+
+.thumb__width {
+    max-inline-size: min(var(--thmb-w), 100%);
+}
+
+.thumb__height {
+    max-block-size: var(--thmb-fig);
+}
+
+.thumbnail__card {
+    display: grid;
+    grid-template-areas: 'images';
+    border-radius: var(--spc-100);
+    height: 100%;
+}
+
+.gallery__link {
+    height: 100%;
+}
+
+.gallery__link img,
+.thumbnail__img {
+    block-size: 100%;
+    display: block;
+}
+
+.thumbnail__img{
+    grid-area: images;
+    object-fit: cover;
+}
+
+.thumbnail__figcaption {
+    grid-area: images;
+    display: flex;
+    flex-direction: column;
+    justify-content: end; 
+    gap: .5rem;
+    padding: var(--spc-400);
+    block-size: var(--thmb-fig);
+    align-self: self-end;
+    background: linear-gradient(transparent, hsl(0 0% 0% /.8));
+    color: var(--clr-white);
+    z-index: 1;
+} 
+.h-fit {
+    block-size: fit-content;
+}
+
+.self {
+    align-self: end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
