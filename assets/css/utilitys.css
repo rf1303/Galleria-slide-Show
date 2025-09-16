@@ -1,0 +1,111 @@
+
+.hidden {
+    display: none;
+}
+
+.clr-gray {
+    color: var(--clr-grey-400);
+}
+
+.ff-bold {
+    font-family: 'baskerville', Georgia, serif;
+    font-weight: 700;
+}
+
+.ff-regular {
+    font-family: 'baskerville', Georgia, serif;
+    font-weight: 400;
+}
+
+.fs-24 {
+    font-size: var(--fs-24);
+}
+
+.fs-18 {
+    font-size: var(--fs-18);
+}
+
+.fs-15 {
+    font-size: var(--fs-15);
+}
+
+.fs-14 {
+    font-size: var(--fs-14);
+}
+
+.fs-13 {
+    font-size: var(--fs-13);
+}
+
+.fs-12 {
+    font-size: var(--fs-12);
+}
+
+.fs-10 {
+    font-size: var(--fs-10);
+}
+
+.fs-9 {
+    font-size: var(--fs-9);
+    text-transform: uppercase;
+}
+
+@media (min-width: 47.938em) {
+   .fs-9 {
+        font-size: var(--fs-12);
+    } 
+}
+
+.lh-110 {
+    line-height: var(--lh-110);
+}
+
+.lh-125 {
+    line-height: var(--lh-125);
+}
+
+.ls-200 {
+    letter-spacing: var(--ls-200);
+}
+
+.h-full {
+    block-size: 100%;
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, --spc-300);
+    justify-content: var(--jc, space-between);
+}
+
+.clamp__gallery{
+    inline-size: min(var(--clamp-gallery), 100%);
+}
+
+.thumb__width {
+    max-inline-size: min(var(--thmb-w), 100%);
+}
+
+.thumb__height {
+    max-block-size: var(--thmb-fig);
+}
+
+.pad-gallery {
+    margin-inline: var(--pad-gallery) ;
+}
+
+.pad-2440 {
+    padding-block: var(--cl-2440);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

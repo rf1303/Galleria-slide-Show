@@ -1,7 +1,6 @@
 import { jsonData } from './jsonLoad.js';
 
 export function thumbnailHtml(dataJson, index) {
-    console.log('thumbnailHtml index: ',typeof index);
     console.log('dataJson.name: ', dataJson.name)
     return `
             <li class="gallery__item" data-index="${index}" >
@@ -23,17 +22,19 @@ export function thumbnailHtml(dataJson, index) {
 export async function galleryList() {
 
     const dataJson = await jsonData;
-    console.log('dataJson galleryList: ', dataJson[0]);
-    if(!dataJson) return;
+    if (!dataJson) return;
 
     const galleryItems = document.getElementById('gallery__list');
-
     galleryItems.innerHTML = '';
 
-    dataJson.forEach((json, index) => {
-        /* console.log('dataJson[index]: ', json); */
-        console.log('Index: ', index );
-        galleryItems.insertAdjacentHTML('beforeend', thumbnailHtml(json, index));
+    const order = [0, 1, 2, 3, 4, 7, 6, 5, 10, 8, 9, 13, 14, 12, 11];
+
+    order.forEach((index) => {
+
+        const items = dataJson[index];
+        if (items) {
+            galleryItems.insertAdjacentHTML('beforeend', thumbnailHtml(items, index));
+        }
     });
 
     setTimeout(() => {
@@ -41,25 +42,8 @@ export async function galleryList() {
     }, 200);
 }
 
-// export function renderGalleria(dataJson) {
-//
-//     const galleriaList = document.getElementById('galleria__list');
-//
-//     const jsonHtml = dataJson.map((galleria) => {
-//
-//         tumbnailHtml(galleria).join('');
-//     })
-//
-//     galleriaList.innerHTML = jsonHtml;
-//
-//     console.log(`🎨 Renderizadas ${dataJson.name.length} obras de arte`);
-//
-//     setTimeout(resizeGridItems, 100)
-// }
-
 export function thumbRowImg(item) {
     const grid = document.querySelector('.grid__gallery');
-    const thumbImg = document.querySelector('.thumbnail__img');
     const computedStyle = getComputedStyle(grid);
     const rowHeight = parseInt(computedStyle.getPropertyValue('grid-auto-rows'));
     const rowGap = parseInt(computedStyle.getPropertyValue('gap')) ||
@@ -78,9 +62,12 @@ export function thumbRowImg(item) {
     /* console.log('contentHeight: ', contentHeight, ' rowHeight: ', rowHeight, ' rowGap: ', rowGap); */
 
     const spanRow = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
-
-    item.style.gridRowEnd = `span ${spanRow}`;
-    /* console.log('spanRow: ', spanRow); */
+    if (item.dataset.index === "12") {
+        console.log("ITEM 12", item.dataset.index)
+        item.style.gridRowEnd = `span ${spanRow - 1}`;
+    } else {
+        item.style.gridRowEnd = `span ${spanRow}`;
+    }
 }
 
 export function thumbGallery() {
@@ -99,61 +86,6 @@ export function initGallery() {
         }, 100);
     });
 }
-
-// export function resizeGridItems() {
-//
-//     const grid = document.querySelector('.grid__gallery');
-//
-//     const items = grid.querySelectorAll('.thumbnail__card');
-//
-//     const gridStyles = window.getComputedStyle(grid);
-//
-//     const rowHeight = parseInt(gridStyles.getPropertyValue('grid-auto-rows'));
-//
-//     const rowGap = parseInt(gridStyles.getPropertyValue('grid-row-gap'));
-//
-//     let procesItems = 0;
-//
-//     items.forEach((item, index) => {
-//
-//         const img = item.querySelector('.thumbail__img img');
-//         if (!img) return;
-//
-//         if (img.complete && img.naturalHeight > 0) {
-//             console.log('naturalHeight: ', img.naturalHeight);
-//
-//             calculateRows(item, img, rowHeight, rowGap, index);
-//             procesItems++;
-//
-//         } else {
-//             /*  ⏳ Imagen aún cargando: esperar al evento onload    */
-//             img.onload = () => {
-//                 calculateRows(item, img, rowHeight, rowGap, index);
-//                 procesItems++;
-//                 updateDebugInfo('procesadas: ${procesItems}/ ${items.length}')
-//             }
-//         }
-//     });
-//
-//     updateDebugInfo('Grid: ${procesItems}/ ${items.length} procesadas')
-//
-// }
-//
-// export function calculateRows(item, img, rowHeight, rowGap, index) {
-//
-//     const imgHeight = img.getBoundingClientRect().height;
-//     console.log('imgHeight: ', imgHeight);
-//
-//     const rowsNeeded = Math.ceil((imgHeight + rowGap) / (rowHeight + rowGap));
-//     console.log('rowsNeeded: ', rowsNeeded);
-//
-//     item.style.gridRowEnd = `span ${rowsNeeded}`;
-//
-//     item.setAttribute('data-rows', rowsNeeded);
-//     console.log(`🎨 ${item.dataset.name}: ${imgHeight}px → ${rowsNeeded} filas`);
-//
-// }
-
 
 
 
