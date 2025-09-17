@@ -1,12 +1,14 @@
 :root {
     --clr-white: hsl(0 100% 100%);
     --clr-black: hsl(0 0% 0%);
-    --clr-grey-400: hsl(0 0% 49%);
+    --clr-gray-400: hsl(0 0% 49%);
     --clr-grey-200: hsl(0 0% 85%);
     --clr-grey-150: hsl(0 0% 90%);
     --clr-grey-100: hsl(0 0% 95%);
 
     --spc-0: 0;
+    --spc-2: .125rem;
+    --spc-4: .25rem;
     --spc-100: .5rem;
     /* 8px */
     --spc-200: 1rem;
@@ -58,9 +60,14 @@
     --thmb-fig: 10.625rem;
     --thumb-img: 19.375rem;
 
+    --clamp-hero: clamp(20.4375rem, 11.5886rem + 37.7551vw, 29.6875rem);
     --clamp-gallery: clamp(20.438rem, -5.6091rem + 106.599vw, 85rem);
+    --clamp-picture: clamp(17.625rem, 7.8793rem + 41.5816vw, 27.8125rem);
+    --clamp-artist: clamp(4rem, 0.1735rem + 16.3265vw, 8rem);
     --pad-gallery: clamp(1.5rem, 0.5434rem + 4.0816vw, 2.5rem);
     --cl-2440: clamp(1.5rem, 0.5434rem + 4.0816vw, 2.5rem);
+    --btn-view-i: 9.5rem;
+    --btn-view-b: 2.5rem;
 }
 
 @font-face {

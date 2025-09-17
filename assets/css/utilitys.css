@@ -1,10 +1,19 @@
+.flex {
+    display: flex;
+    gap: var(--gap, --spc-300);
+    justify-content: var(--jc, space-between);
+}
+
+.grid {
+    display: grid;
+}
 
 .hidden {
     display: none;
 }
 
-.clr-gray {
-    color: var(--clr-grey-400);
+.pointer {
+    cursor: pointer;
 }
 
 .ff-bold {
@@ -43,6 +52,7 @@
 
 .fs-10 {
     font-size: var(--fs-10);
+    text-transform: uppercase;
 }
 
 .fs-9 {
@@ -60,22 +70,32 @@
     line-height: var(--lh-110);
 }
 
+.lh-120 {
+    line-height: var(--lh-120);
+}
+
 .lh-125 {
     line-height: var(--lh-125);
+}
+
+.lh-135 {
+    line-height: var(--lh-135);
+}
+
+.lh-200 {
+    line-height: var(--lh-200);
 }
 
 .ls-200 {
     letter-spacing: var(--ls-200);
 }
 
-.h-full {
-    block-size: 100%;
+.ls-100 {
+    letter-spacing: var(--ls-100);
 }
 
-.flex {
-    display: flex;
-    gap: var(--gap, --spc-300);
-    justify-content: var(--jc, space-between);
+.h-full {
+    block-size: 100%;
 }
 
 .clamp__gallery{
@@ -96,6 +116,22 @@
 
 .pad-2440 {
     padding-block: var(--cl-2440);
+}
+
+.clr-black {
+    color: var(--clr-black);
+}
+
+.clr-white {
+    color: var(--clr-white);
+}
+
+.clr-gray {
+    color: var(--clr-gray-400);
+}
+
+.clamp__hero{
+    inline-size: var(--clamp-hero);
 }
 
 .sr-only {

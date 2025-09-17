@@ -56,7 +56,7 @@ export function thumbRowImg(item) {
     const contentHeight = img.getBoundingClientRect().height;
     /* const contentHeight = img.naturalHeight; */
     if (contentHeight === 0) {
-        img.addEvenListener('load', () => thumbRowImg(item), { once: true });
+        img.addEventListener('load', () => thumbRowImg(item), { once: true });
         return;
     }
     /* console.log('contentHeight: ', contentHeight, ' rowHeight: ', rowHeight, ' rowGap: ', rowGap); */

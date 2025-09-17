@@ -5,7 +5,7 @@ import { jsonData } from './jsonLoad.js';
 document.addEventListener('DOMContentLoaded', () => {
     console.log('inicio');
 
-    galleryList();  
+    /* galleryList();  */ 
     // jsonData.then(data => {
     //     console.log('jsonData: ', data);
     // })
