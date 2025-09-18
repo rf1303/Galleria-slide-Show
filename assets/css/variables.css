@@ -44,6 +44,8 @@
     --fs-10: .625rem;
     --fs-9: .563rem;
 
+    --ff: 'baskerville', Georgia, serif;
+
     --lh-200: 2;
     --lh-135: 1.35;
     --lh-125: 1.25;
@@ -65,6 +67,8 @@
     --clamp-gallery: clamp(20.438rem, -5.6091rem + 106.599vw, 85rem);
     --clamp-picture: clamp(17.625rem, 7.8793rem + 41.5816vw, 27.8125rem);
     --clamp-artist: clamp(4rem, 0.1735rem + 16.3265vw, 8rem);
+    --clamp-lead: clamp(20.4375rem, 12.6649rem + 33.1633vw, 28.5625rem);
+    --clamp-modal: clamp(20.4375rem, -0.0703rem + 87.5vw, 41.875rem);
     --pad-gallery: clamp(1.5rem, 0.5434rem + 4.0816vw, 2.5rem);
     --cl-2440: clamp(1.5rem, 0.5434rem + 4.0816vw, 2.5rem);
     --btn-view-i: 9.5rem;
