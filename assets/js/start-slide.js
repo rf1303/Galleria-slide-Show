@@ -11,7 +11,6 @@ export function slideStartStop(slideIndex) {
 }
 
 export function slideGallery(index) {
-    galleryHero(index);
     const btnGallery = document.getElementById('btn__gallery');
     const btnSlide = document.getElementById('btn__slide');
     const wrapperMain = document.getElementById('wrapper__main');
@@ -29,6 +28,7 @@ export function slideGallery(index) {
         wrapperFooter.classList.remove('hidden');
         footerLine.classList.remove('hidden');
     }
+    galleryHero(index);
 }
 
 
