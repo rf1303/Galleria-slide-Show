@@ -3,8 +3,8 @@ import { jsonData } from './jsonLoad.js';
 export function thumbnailHtml(dataJson, index) {
     console.log('dataJson.name: ', dataJson.name)
     return `
-            <li class="gallery__item" data-index="${index}" >
-                <a href="#" class="gallery__link" data-name="${dataJson.name}">
+            <li class="gallery__item"  data-name="${dataJson.name}">
+                <button type="button" class="gallery__link" data-index="${index}" >
                     <figure class="thumbnail__card thumb__width ">
                         <img src="${dataJson.images.thumbnail}" class="thumbnail__img"
                             alt="Portrait of Vincent Van Gogh">
@@ -13,7 +13,7 @@ export function thumbnailHtml(dataJson, index) {
                             <p class="fs-13 ff-regular lh-125">${dataJson.artist.name}</p>
                         </figcaption>
                     </figure>
-                </a>
+                </button>
             </li>
         `
 }
@@ -52,18 +52,16 @@ export function thumbRowImg(item) {
     const img = item.querySelector('.thumbnail__img') || item;
     if (!img) return;
 
-    /* console.log('natural Height: ', img.naturalHeight); */
     const contentHeight = img.getBoundingClientRect().height;
-    /* const contentHeight = img.naturalHeight; */
     if (contentHeight === 0) {
         img.addEventListener('load', () => thumbRowImg(item), { once: true });
         return;
     }
-    /* console.log('contentHeight: ', contentHeight, ' rowHeight: ', rowHeight, ' rowGap: ', rowGap); */
 
     const spanRow = Math.ceil((contentHeight + rowGap) / (rowHeight + rowGap));
-    if (item.dataset.index === "12") {
-        console.log("ITEM 12", item.dataset.index)
+    const btn = item.querySelector('.gallery__link');
+    const dataIndex = btn.getAttribute('data-index');
+    if (dataIndex === "12") {
         item.style.gridRowEnd = `span ${spanRow - 1}`;
     } else {
         item.style.gridRowEnd = `span ${spanRow}`;
@@ -87,7 +85,31 @@ export function initGallery() {
     });
 }
 
+export function galleryBtn() {
+    const btnGallery = document.getElementById('btn__gallery');
+    const btnSlide = document.getElementById('btn__slide');
+    const wrapperMain = document.getElementById('wrapper__main');
+    const wrapperAside = document.getElementById('wrapper__aside');
+    const footerLine = document.getElementById('footer__line');
+    const wrapperFooter = document.getElementById('wrapper__footer');
 
+    const ariaGallery = btnGallery.getAttribute('aria-expanded');
+    if (ariaGallery === "false") {
+        btnGallery.setAttribute('aria-expanded', 'true');
+        btnSlide.textContent = "start slideshow";
+        wrapperMain.classList.remove('hidden');
+        wrapperAside.classList.add('hidden');
+        wrapperFooter.classList.add('hidden');
+        footerLine.classList.add('hidden');
+    }
+    // } else {
+    //     btnGallery.setAttribute('aria-expanded', 'false');
+    //     wrapperMain.classList.add('hidden');
+    //     wrapperAside.classList.remove('hidden');
+    //     wrapperFooter.classList.remove('hidden');
+    //     footerLine.classList.remove('hidden');
+    // }
+}
 
 
 

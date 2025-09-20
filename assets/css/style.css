@@ -39,6 +39,11 @@ body {
     height: 100%;
 }
 
+.gallery__link:hover,
+.gallery__link:focus {
+    cursor: pointer;
+}
+
 .gallery__link img,
 .thumbnail__img {
     block-size: 100%;
@@ -257,17 +262,17 @@ body {
     font-family: var(--ff);
     font-weight: 700;
     font-size: var(--fs-14);
+    line-height: 1.5;
 }
 
 .footer__artist {
     font-family: var(--ff);
     font-weight: 400;
     font-size: var(--fs-10);
+    line-height: 1.5;
 }
 
 @media (min-width: 47em) {
-    /* .footer__line { */
-    /* } */
     .wrapper__footer {
         padding: var(--spc-300) var(--spc-500);
         margin-block-end: var(--spc-800);
@@ -334,3 +339,23 @@ body {
         inline-size: 50.563rem;
     } 
 }
+
+.wrapper__modal{
+  opacity: 0;
+  translate: -20vh 0;
+  transition-property: translate,  opacity;
+  transition-duration: .7s;
+  transition-behavior: allow-discrete;
+
+  &:where(:not(.display__none)) {
+    transition: opacity .7s ease-in, translate .4s ease-in;
+    opacity: 1;
+    translate: 0 0;
+
+    @starting-style {
+      opacity: 0;
+      translate: -20vh 0;
+    }
+  }
+}
+
