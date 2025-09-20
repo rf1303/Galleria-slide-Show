@@ -18,7 +18,6 @@ export function thumbnailHtml(dataJson, index) {
         `
 }
 
-
 export async function galleryList() {
 
     const dataJson = await jsonData;
@@ -96,6 +95,7 @@ export function galleryBtn() {
     const ariaGallery = btnGallery.getAttribute('aria-expanded');
     if (ariaGallery === "false") {
         btnGallery.setAttribute('aria-expanded', 'true');
+        btnSlide.setAttribute('aria-pressed', 'false');
         btnSlide.textContent = "start slideshow";
         wrapperMain.classList.remove('hidden');
         wrapperAside.classList.add('hidden');

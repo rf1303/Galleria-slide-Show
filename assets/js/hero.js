@@ -1,3 +1,4 @@
+import { jsonData } from "./jsonLoad.js";
 
     const wrapperAside = document.getElementById('wrapper__aside'); 
     const footerLine = document.getElementById('footer__line');
@@ -12,3 +13,10 @@
     const leadWiki = document.getElementById('lead__wiki'); 
     const footerTitle = document.getElementById('footer__title'); 
     const footerArtist = document.getElementById('footer__artist'); 
+
+
+    export async function galleryHero(index)  {
+        const dataJson = await jsonData;
+        const item = dataJson[index];   
+        console.log('galleryHero', item);
+    };

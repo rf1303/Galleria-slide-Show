@@ -1,4 +1,5 @@
 import { galleryList, initGallery } from './gallery.js';
+import {galleryHero} from './hero.js';
 
 export function slideStartStop(slideIndex) {
     const galleryLink = document.querySelector('.gallery__link');
@@ -10,6 +11,7 @@ export function slideStartStop(slideIndex) {
 }
 
 export function slideGallery(index) {
+    galleryHero(index);
     const btnGallery = document.getElementById('btn__gallery');
     const btnSlide = document.getElementById('btn__slide');
     const wrapperMain = document.getElementById('wrapper__main');
@@ -28,6 +30,7 @@ export function slideGallery(index) {
         footerLine.classList.remove('hidden');
     }
 }
+
 
 
 
