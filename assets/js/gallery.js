@@ -1,7 +1,6 @@
 import { jsonData } from './jsonLoad.js';
 
 export function thumbnailHtml(dataJson, index) {
-    console.log('dataJson.name: ', dataJson.name)
     return `
             <li class="gallery__item"  data-name="${dataJson.name}">
                 <button type="button" class="gallery__link" data-index="${index}" >
@@ -9,8 +8,8 @@ export function thumbnailHtml(dataJson, index) {
                         <img src="${dataJson.images.thumbnail}" class="thumbnail__img"
                             alt="Portrait of Vincent Van Gogh">
                         <figcaption class="thumbnail__figcaption  ">
-                            <h3 class="fs-24 ff-bold lh-125 h-fit">${dataJson.name}</h3>
-                            <p class="fs-13 ff-regular lh-125">${dataJson.artist.name}</p>
+                            <h3 class="fig__title fs-24 ff-bold lh-125 h-fit">${dataJson.name}</h3>
+                            <p class="fig__name fs-13 ff-regular lh-125">${dataJson.artist.name}</p>
                         </figcaption>
                     </figure>
                 </button>
@@ -96,33 +95,13 @@ export function galleryBtn() {
     if (ariaGallery === "false") {
         btnGallery.setAttribute('aria-expanded', 'true');
         btnSlide.setAttribute('aria-pressed', 'false');
+        console.log('btnGallery: ', btnGallery.getAttribute('aria-expanded'));
+        console.log('btnSlide: ', btnSlide.getAttribute('aria-pressed'));
         btnSlide.textContent = "start slideshow";
         wrapperMain.classList.remove('hidden');
         wrapperAside.classList.add('hidden');
         wrapperFooter.classList.add('hidden');
         footerLine.classList.add('hidden');
     }
-    // } else {
-    //     btnGallery.setAttribute('aria-expanded', 'false');
-    //     wrapperMain.classList.add('hidden');
-    //     wrapperAside.classList.remove('hidden');
-    //     wrapperFooter.classList.remove('hidden');
-    //     footerLine.classList.remove('hidden');
-    // }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

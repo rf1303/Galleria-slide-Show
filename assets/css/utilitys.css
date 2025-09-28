@@ -62,9 +62,9 @@
 }
 
 @media (min-width: 47.938em) {
-   .fs-9 {
+    .fs-9 {
         font-size: var(--fs-12);
-    } 
+    }
 }
 
 .lh-110 {
@@ -99,7 +99,7 @@
     block-size: 100%;
 }
 
-.clamp__gallery{
+.clamp__gallery {
     inline-size: min(var(--clamp-gallery), 100%);
 }
 
@@ -112,7 +112,7 @@
 }
 
 .pad-gallery {
-    margin-inline: var(--pad-gallery) ;
+    margin-inline: var(--pad-gallery);
 }
 
 .pad-2440 {
@@ -131,8 +131,34 @@
     color: var(--clr-gray-400);
 }
 
-.clamp__hero{
+.clamp__hero {
     inline-size: var(--clamp-hero);
+}
+
+.aside__in {
+    animation: asideIn .4s ease forwards;
+}
+
+.aside__out {
+    animation: asideOut .3s ease forwards;
+}
+
+@keyframes asideIn {
+    from {
+        translate: 100% 0;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
+@keyframes asideOut {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -100% 0;
+    }
 }
 
 .sr-only {

@@ -1,13 +1,57 @@
 import { galleryList, initGallery } from './gallery.js';
-import {galleryHero} from './hero.js';
+import { galleryHero, galleryHeroBtn } from './hero.js';
 
-export function slideStartStop(slideIndex) {
-    const galleryLink = document.querySelector('.gallery__link');
-    if (slideIndex === 0) {
-        slideGallery(slideIndex);
+const btnSlide = document.getElementById('btn__slide');
+const wrapperAside = document.getElementById('wrapper__aside');
+const btnPreview = document.getElementById('btn__preview');
+const btnNext = document.getElementById('btn__next');
+let slideInterval;
+
+export function slideStartStop() {
+    const ariaBtn = btnSlide.getAttribute('aria-pressed');
+    const dataAside = wrapperAside.dataset.aside;
+    if (ariaBtn === "true") {
+        btnSlide.textContent = "start slideshow";
+        console.log('btnSlide: ', btnSlide.getAttribute('aria-pressed'));
+        btnSlide.setAttribute('aria-pressed', 'false');
+        clearInterval(slideInterval);
     } else {
-        const index = galleryLink.dataset.index;
+        console.log('btnSlide: ', btnSlide.getAttribute('aria-pressed'));
+        btnSlide.textContent = "stop slideshow";
+        btnSlide.setAttribute('aria-pressed', 'true');
+        if (dataAside === '0') {
+            galleryHeroBtn(dataAside);
+            slideShow();
+        } else {
+            console.log('dataAside else: ', dataAside);
+            galleryHeroBtn(dataAside);
+            slideShow();
+        }
     }
+}
+
+function slideShow() {
+    slideInterval = setInterval(() => {
+        let aside = parseInt(wrapperAside.dataset.aside, 10);
+        aside = (aside + 1) % 15;
+        wrapperAside.dataset.aside = aside
+        asideAnimate(aside);
+    }, 4000);
+
+}
+
+export function asideAnimate(aside) {
+    wrapperAside.classList.add('aside__out');
+    wrapperAside.addEventListener('animationend', function asideChange(e) {
+        if (e.animationName === "asideOut") {
+            galleryHeroBtn(aside);
+            wrapperAside.classList.remove('aside__out');
+            wrapperAside.classList.add('aside__in');
+        } else if (e.animationName === 'aside__in') {
+            wrapperAside.classList.remove('aside__in');
+        }
+        wrapperAside.removeEventListener('animationend', asideChange)
+    })
 }
 
 export function slideGallery(index) {
@@ -31,6 +75,13 @@ export function slideGallery(index) {
     galleryHero(index);
 }
 
+btnPreview.addEventListener('click', () => {
+      const btnAside = wrapperAside.dataset.aside;
+    console.log('btnAside preview ', btnAside);
+});
 
-
+btnNext.addEventListener('click', () => {
+      const btnAside = wrapperAside.dataset.aside;
+    console.log('btnAside next ', btnAside);
+});
 

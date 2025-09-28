@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -38,7 +37,7 @@
 
         </ul>
     </main>
-    <aside class="wrapper__aside hidden" id="wrapper__aside">
+    <aside class="wrapper__aside hidden" id="wrapper__aside" data-aside="0">
         <section class="wrapper__portraid ">
             <div class="wrapper__hero clamp__hero">
                 <picture class="hero__view ">
@@ -91,7 +90,7 @@
             <h2 class="footer__artist  clr-black">Vincent Van Gogh</h2>
         </div>
         <div class="flex play__pn">
-            <button type="button">
+            <button type="button" id="btn__preview">
                 <svg viewBox="0 0 26 24" class="btn__pn" xmlns="http://www.w3.org/2000/svg">
                     <g stroke="#000" fill="none" fill-rule="evenodd">
                         <path d="M24.166 1.843L3.627 12.113l20.539 10.269V1.843z" stroke-width="2" />
@@ -99,7 +98,7 @@
                     </g>
                 </svg>
             </button>
-            <button type="button">
+            <button type="button" id="btn__next">
                 <svg viewBox="0 0 26 24" class="btn__pn" xmlns="http://www.w3.org/2000/svg">
                     <g stroke="#000" fill="none" fill-rule="evenodd">
                         <path d="M1.528 1.843l20.538 10.27L1.528 22.382V1.843z" stroke-width="2" />
@@ -112,7 +111,7 @@
     <div class="wrapper__modal" id="modal" popover role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <button type="button" class="btn__modal fs-14 ff-bold" popovertarget="modal"
             popovertargetaction="hide">close</button>
-        <img src="./assets/images/starry-night/gallery.jpg" alt="starry-night portraid" class="" loading="lazy"
+        <img src="./assets/images/starry-night/gallery.jpg" alt="starry-night portraid" class="img__modal" loading="lazy"
             decoding="async">
     </div>
 </body>

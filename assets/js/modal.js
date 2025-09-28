@@ -8,7 +8,6 @@ let lastFocusedButton = null;
 galleryButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         lastFocusedButton = btn;
-
         // ⚡ Ejemplo: insertamos contenido dinámico
         const artworkId = btn.dataset.id;
         modalBody.innerHTML = `<img src="./assets/images/${artworkId}/image.jpg" 
@@ -39,4 +38,7 @@ function closeModal() {
         lastFocusedButton.focus();
     }
 }
+
+
+
 
