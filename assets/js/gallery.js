@@ -70,12 +70,19 @@ export function thumbGallery() {
     const itemsImg = document.querySelectorAll('.gallery__item');
 
     itemsImg.forEach(element => {
-        thumbRowImg(element);
+        const img = element.querySelector('.thumbnail__img');
+        if (!img) return;
+        if (img.complete) {
+            thumbRowImg(element);
+        } else {
+            img.addEventListener('load', () => thumbRowImg(element), { once: true });
+        }
     });
 }
 
 export function initGallery() {
-    thumbGallery();
+    window.addEventListener('load', thumbGallery);
+    /* thumbGallery(); */
     window.addEventListener('resize', () => {
         setTimeout(() => {
             thumbGallery();
