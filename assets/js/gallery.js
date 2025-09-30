@@ -6,7 +6,7 @@ export function thumbnailHtml(dataJson, index) {
                 <button type="button" class="gallery__link" data-index="${index}" >
                     <figure class="thumbnail__card thumb__width ">
                         <img src="${dataJson.images.thumbnail}" class="thumbnail__img"
-                            alt="Portrait of Vincent Van Gogh">
+                            alt="${dataJson.name} by ${dataJson.artist.name}">
                         <figcaption class="thumbnail__figcaption  ">
                             <h3 class="fig__title fs-24 ff-bold lh-125 h-fit">${dataJson.name}</h3>
                             <p class="fig__name fs-13 ff-regular lh-125">${dataJson.artist.name}</p>
@@ -28,13 +28,11 @@ export async function galleryList() {
     const order = [0, 1, 2, 3, 4, 7, 6, 5, 10, 8, 9, 13, 14, 12, 11];
 
     order.forEach((index) => {
-
         const items = dataJson[index];
         if (items) {
             galleryItems.insertAdjacentHTML('beforeend', thumbnailHtml(items, index));
         }
     });
-
     setTimeout(() => {
         thumbGallery();
     }, 200);
@@ -102,8 +100,6 @@ export function galleryBtn() {
     if (ariaGallery === "false") {
         btnGallery.setAttribute('aria-expanded', 'true');
         btnSlide.setAttribute('aria-pressed', 'false');
-        console.log('btnGallery: ', btnGallery.getAttribute('aria-expanded'));
-        console.log('btnSlide: ', btnSlide.getAttribute('aria-pressed'));
         btnSlide.textContent = "start slideshow";
         wrapperMain.classList.remove('hidden');
         wrapperAside.classList.add('hidden');

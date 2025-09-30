@@ -5,6 +5,7 @@ const btnSlide = document.getElementById('btn__slide');
 const wrapperAside = document.getElementById('wrapper__aside');
 const btnPreview = document.getElementById('btn__preview');
 const btnNext = document.getElementById('btn__next');
+const totalAside = 15; 
 let slideInterval;
 
 export function slideStartStop() {
@@ -12,18 +13,15 @@ export function slideStartStop() {
     const dataAside = wrapperAside.dataset.aside;
     if (ariaBtn === "true") {
         btnSlide.textContent = "start slideshow";
-        console.log('btnSlide: ', btnSlide.getAttribute('aria-pressed'));
         btnSlide.setAttribute('aria-pressed', 'false');
         clearInterval(slideInterval);
     } else {
-        console.log('btnSlide: ', btnSlide.getAttribute('aria-pressed'));
         btnSlide.textContent = "stop slideshow";
         btnSlide.setAttribute('aria-pressed', 'true');
         if (dataAside === '0') {
             galleryHeroBtn(dataAside);
             slideShow();
         } else {
-            console.log('dataAside else: ', dataAside);
             galleryHeroBtn(dataAside);
             slideShow();
         }
@@ -34,7 +32,7 @@ function slideShow() {
     slideInterval = setInterval(() => {
         let aside = parseInt(wrapperAside.dataset.aside, 10);
         aside = (aside + 1) % 15;
-        wrapperAside.dataset.aside = aside
+        wrapperAside.dataset.aside = aside;
         asideAnimate(aside);
     }, 4000);
 
@@ -75,13 +73,21 @@ export function slideGallery(index) {
     galleryHero(index);
 }
 
+ 
 btnPreview.addEventListener('click', () => {
-      const btnAside = wrapperAside.dataset.aside;
-    console.log('btnAside preview ', btnAside);
+    let asidePreview = parseInt(wrapperAside.dataset.aside, 10) || 0;
+    asidePreview = nextPrev(asidePreview - 1, totalAside);
+    wrapperAside.dataset.aside = asidePreview;
+    asideAnimate(asidePreview);
 });
 
 btnNext.addEventListener('click', () => {
-      const btnAside = wrapperAside.dataset.aside;
-    console.log('btnAside next ', btnAside);
+    let asideNext = parseInt(wrapperAside.dataset.aside, 10) || 0;
+    asideNext = nextPrev(asideNext + 1, totalAside);
+    wrapperAside.dataset.aside = asideNext;
+    asideAnimate(asideNext);
 });
 
+function nextPrev(aside, totalAside) {
+    return ((aside % totalAside) + totalAside) % totalAside;
+}

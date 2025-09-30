@@ -1,6 +1,5 @@
-import { jsonData } from "./jsonLoad.js"; import { slideGallery } from "./start-slide.js";
+import { jsonData } from "./jsonLoad.js"; 
 
-const galleryLink = document.querySelectorAll('.gallery__link');
 const wrapperMain = document.getElementById('wrapper__main');
 const wrapperAside = document.getElementById('wrapper__aside');
 const footerLine = document.getElementById('footer__line');
@@ -10,6 +9,7 @@ const heroImg = document.getElementById('img__hero');
 const pictureTitle = document.getElementById('picture__title');
 const pictureArtist = document.getElementById('picture__artist');
 const pictureImg = document.getElementById('img__artist');
+const numberLead = document.querySelector('.year__number');
 const textLead = document.getElementById('text__lead');
 const leadWiki = document.getElementById('lead__wiki');
 const footerTitle = document.querySelector('.footer__title');
@@ -31,9 +31,11 @@ export async function galleryHero(index) {
     const item = dataJson[index];
     heroLarge.srcset = item.images.hero.large;
     heroImg.src = item.images.hero.small;
+    heroImg.alt = `${item.name} by ${item.artist.name}`;
     pictureTitle.textContent = item.name;
     pictureArtist.textContent = item.artist.name;
     pictureImg.src = item.artist.image;
+    numberLead.textContent = item.year;
     textLead.textContent = item.description;
     leadWiki.href = item.source;
     footerTitle.textContent = item.name

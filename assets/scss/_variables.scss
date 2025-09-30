@@ -1,3 +1,5 @@
+@use 'util/functions' as f;
+
 :root {
   --clr-white: hsl(0 100% 100%);
   --clr-black: hsl(0 0% 0%);
@@ -44,7 +46,7 @@
   --fs-10: .625rem;
   --fs-9: .563rem;
 
-  --ff: 'baskerville', Georgia, serif;
+  --ff: 'baskerville';
 
   --lh-200: 2;
   --lh-135: 1.35;
@@ -69,6 +71,7 @@
   --clamp-artist: clamp(4rem, 0.1735rem + 16.3265vw, 8rem);
   --clamp-lead: clamp(20.4375rem, 12.6649rem + 33.1633vw, 28.5625rem);
   --clamp-modal: clamp(20.4375rem, -0.0703rem + 87.5vw, 41.875rem);
+  --number-width: #{f.rem(476)}; 
   --pad-gallery: clamp(1.5rem, 0.5434rem + 4.0816vw, 2.5rem);
   --cl-2440: clamp(1.5rem, 0.5434rem + 4.0816vw, 2.5rem);
   --btn-view-i: 9.5rem;

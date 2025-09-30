@@ -1,7 +1,7 @@
 @use '../_variables.scss' as *;
 
 @mixin tgSize($family, $size , $weight ) {
-  font-family: $family , sans-serif;
+  font-family: $family ,  Georgia, serif;
   font-size: $size;
   font-weight: $weight;
 }

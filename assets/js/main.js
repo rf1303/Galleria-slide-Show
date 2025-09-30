@@ -1,6 +1,6 @@
 import './gallery.js';
-import { galleryList, initGallery, thumbGallery, galleryBtn } from './gallery.js';
-import { slideGallery, slideStartStop } from './start-slide.js';
+import { galleryList, thumbGallery, galleryBtn } from './gallery.js';
+import {  slideStartStop } from './start-slide.js';
 import { galleryHeroBtn } from './hero.js';
 
 galleryList();
