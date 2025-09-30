@@ -19,6 +19,9 @@ body {
   block-size: clamp(2rem, 0.8571rem + 2.381vw, 3rem);
 }
 
+#btn__slide {
+  color: var(--clr-grey-493);
+}
 
 .grid__gallery {
   display: grid;
