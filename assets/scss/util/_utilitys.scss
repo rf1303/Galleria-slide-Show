@@ -1,0 +1,174 @@
+.flex {
+    display: flex;
+    gap: var(--gap, --spc-300);
+    justify-content: var(--jc, space-between);
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.ff-bold {
+    font-family: 'baskerville', Georgia, serif;
+    font-weight: 700;
+}
+
+.ff-regular {
+    font-family: 'baskerville', Georgia, serif;
+    font-weight: 400;
+}
+
+.fs-24 {
+    font-size: var(--fs-24);
+}
+
+.fs-18 {
+    font-size: var(--fs-18);
+}
+
+.fs-15 {
+    font-size: var(--fs-15);
+}
+
+.fs-14 {
+    font-size: var(--fs-14);
+}
+
+.fs-13 {
+    font-size: var(--fs-13);
+}
+
+.fs-12 {
+    font-size: var(--fs-12);
+}
+
+.fs-10 {
+    font-size: var(--fs-10);
+    text-transform: uppercase;
+}
+
+.fs-9 {
+    font-size: var(--fs-9);
+    text-transform: uppercase;
+}
+
+@media (min-width: 47.938em) {
+    .fs-9 {
+        font-size: var(--fs-12);
+    }
+}
+
+.lh-110 {
+    line-height: var(--lh-110);
+}
+
+.lh-120 {
+    line-height: var(--lh-120);
+}
+
+.lh-125 {
+    line-height: var(--lh-125);
+}
+
+.lh-135 {
+    line-height: var(--lh-135);
+}
+
+.lh-200 {
+    line-height: var(--lh-200);
+}
+
+.ls-200 {
+    letter-spacing: var(--ls-200);
+}
+
+.ls-100 {
+    letter-spacing: var(--ls-100);
+}
+
+.h-full {
+    block-size: 100%;
+}
+
+.clamp__gallery {
+    inline-size: min(var(--clamp-gallery), 100%);
+}
+
+.thumb__width {
+    max-inline-size: min(var(--thmb-w), 100%);
+}
+
+.thumb__height {
+    max-block-size: var(--thmb-fig);
+}
+
+.pad-gallery {
+    margin-inline: var(--pad-gallery);
+}
+
+.pad-2440 {
+    padding-block: var(--cl-2440);
+}
+
+.clr-black {
+    color: var(--clr-black);
+}
+
+.clr-white {
+    color: var(--clr-white);
+}
+
+.clr-gray {
+    color: var(--clr-gray-400);
+}
+
+.clamp__hero {
+    inline-size: var(--clamp-hero);
+}
+
+.aside__in {
+    animation: asideIn .4s ease forwards;
+}
+
+.aside__out {
+    animation: asideOut .3s ease forwards;
+}
+
+@keyframes asideIn {
+    from {
+        translate: 100% 0;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
+@keyframes asideOut {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -100% 0;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
