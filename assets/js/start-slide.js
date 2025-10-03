@@ -1,4 +1,3 @@
-import { galleryList, initGallery } from './gallery.js';
 import { galleryHero, galleryHeroBtn } from './hero.js';
 
 const btnSlide = document.getElementById('btn__slide');

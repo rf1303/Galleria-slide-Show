@@ -1,38 +1,21 @@
 @use 'util/functions' as f;
 
 :root {
-  --clr-white: hsl(0 100% 100%);
-  --clr-black: hsl(0 0% 0%);
-  --clr-gray-400: hsl(0 0% 49%);
-  --clr-grey-200: hsl(0 0% 85%);
-  --clr-grey-150: hsl(0 0% 90%);
-  --clr-grey-100: hsl(0 0% 95%);
 
   --spc-0: 0;
   --spc-2: .125rem;
   --spc-4: .25rem;
   --spc-100: .5rem;
-  /* 8px */
   --spc-200: 1rem;
-  /* 16px */
   --spc-300: 1.5rem;
-  /* 24px */
   --spc-400: 2rem;
-  /* 32px */
   --spc-500: 2.5rem;
-  /* 40px */
   --spc-600: 3rem;
-  /* 48px */
   --spc-700: 3.5rem;
-  /* 56px */
   --spc-800: 4rem;
-  /* 64px */
   --spc-900: 4.5rem;
-  /* 72px */
   --spc-1000: 5rem;
-  /* 80px */
   --spc-1200: 6rem;
-  /* 96px */
 
   --fs-200: 12.5rem;
   --fs-100: 6.25rem;
