@@ -9,10 +9,6 @@
     width: 100%;
 }
 
-.hidden {
-    display: none;
-}
-
 .pointer {
     cursor: pointer;
 }
@@ -136,11 +132,11 @@
 }
 
 .aside__in {
-    animation: asideIn .4s ease forwards;
+    animation: asideIn .4s ease-out forwards;
 }
 
 .aside__out {
-    animation: asideOut .3s ease forwards;
+    animation: asideOut .3s ease-in-out forwards;
 }
 
 @keyframes asideIn {
@@ -154,10 +150,14 @@
 
 @keyframes asideOut {
     from {
-        translate: 0;
+        opacity: 1;
+        filter: blur(0);
+        /* translate: 0; */
     }
     to {
-        translate: -100% 0;
+        opacity: .7;
+        filter: blur(6px);
+        /* translate: -100% 0; */
     }
 }
 

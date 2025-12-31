@@ -14,6 +14,7 @@ body {
   overflow-x: hidden;
 }
 
+
 .title__galleria {
   inline-size: clamp(7.0625rem, 2.9911rem + 8.4821vw, 10.625rem);
   block-size: clamp(2rem, 0.8571rem + 2.381vw, 3rem);
@@ -111,6 +112,18 @@ body {
   align-items: center;
   justify-items: center;
   overflow: hidden;
+  transition: all .4s ease-in-out;
+
+  &:where(:not(.hidden)) {
+    opacity: 1;
+    translate: 0 0;
+    transform: scale(1) rotateY(0);
+
+    @starting-style {
+      opacity: 0;
+      transform: scale(.5) rotateY(120deg);
+    }
+  }
 }
 
 @media (min-width: 47em) {
@@ -375,7 +388,7 @@ body {
 }
 
 .wrapper__modal[popover] {
-  /* inline-size: min(var(--clamp-modal), 100%); */
+  background-color: transparent;
   border: none;
   outline: none;
   position: absolute;
@@ -384,6 +397,12 @@ body {
   border-radius: var(--spc-100);
   overflow: visible;
 }
+
+// .modal__box {
+//   inline-size: min(var(--clamp-modal), 100%);
+//   margin-inline: auto;
+//
+// }
 
 .wrapper__modal[popover]::backdrop {
   background: rgba(0, 0, 0, .8);
@@ -400,8 +419,8 @@ body {
 }
 
 .img__modal {
-  object-fit: cover;
   block-size: min(44.5rem, 100%);
+  border-radius: var(--spc-100);
 }
 
 @media (min-width: 47em) {
@@ -410,29 +429,35 @@ body {
   }
 }
 
-/* @media (min-width: 60em) { */
-/*     .wrapper__modal[popover] { */
-/*     inline-size: 100%; */
-/*         block-size: min(44.5rem, 100%); */
-/*     } */
-/* } */
+// @media (min-width: 78em) {
+//   .wrapper__modal[popover] {
+//     /* inline-size: ; */
+//   }
+// }
 
 .wrapper__modal {
   opacity: 0;
   transform: rotateY(90deg);
   /* translate: -20vh 0; */
   transition-property: translate, opacity;
-  transition-duration: .7s;
+  transition-duration: .4s;
   transition-behavior: allow-discrete;
 
-  &:where(:not(.display__none)) {
+  @starting-style {
+    opacity: 1;
+    /* transform: scale(.6) rotateY(90deg); */
+    /* filter: blur(8px); */
+    /* translate: -20vh 0; */
+  }
+
+  &:where(:not(.hidden)) {
     /* transition: opacity .7s ease-in, translate .4s ease-in; */
-    transition: all .7s ease;
+    transition: all .4s ease-in-out;
     opacity: 1;
     translate: 0 0;
     transform: scale(1) rotateY(0);
-    /* filter: blur(0); */
 
+    /* filter: blur(0); */
     @starting-style {
       opacity: 0;
       transform: scale(.6) rotateY(90deg);
@@ -440,4 +465,8 @@ body {
       /* translate: -20vh 0; */
     }
   }
+}
+
+.hidden {
+  display: none;
 }

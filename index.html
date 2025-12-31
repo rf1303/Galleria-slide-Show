@@ -1,4 +1,5 @@
-<!DOCTYPE html> <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -26,15 +27,15 @@
                 </svg>
             </button>
         </div>
-        <button class="ff-bold fs-9  ls-200 lh-125 pointer" type="button" id="btn__slide"
-            aria-label="Start slideshow" aria-pressed="false" data-state="inactive">Start
+        <button class="ff-bold fs-9  ls-200 lh-125 pointer" type="button" id="btn__slide" aria-label="Start slideshow"
+            aria-pressed="false" data-state="inactive">Start
             slideshow</button>
     </header>
     <main class="clamp__gallery pad-2440 " id="wrapper__main">
 
         <ul class="grid__gallery clamp__gallery" id="gallery__list">
 
-<!-- #############  Gallery render by Javascript  ################ -->
+            <!-- #############  Gallery render by Javascript  ################ -->
 
         </ul>
     </main>
@@ -49,8 +50,7 @@
                 </picture>
                 <button type="button" class="btn__view flex fs-10 ff-bold ls-200 lh-110" id="view__image"
                     popovertarget="modal" aria-label="Open full image">
-                    <img src="./assets/images/shared/icon-view-image.svg" alt="" loading="lazy"
-                        decoding="async">
+                    <img src="./assets/images/shared/icon-view-image.svg" alt="" loading="lazy" decoding="async">
                     View image
                 </button>
             </div>
@@ -69,7 +69,7 @@
         <div class="wrappers__lead ">
             <div class="lead__year">
                 <span class="year__number">1889</span>
-            </div> 
+            </div>
             <div class="lead__text">
                 <p class="text__p fs-14 ff-bold clr-gray lh-200" id="text__lead">
                     Although The Starry Night was painted during the day in Van Gogh's ground-floor
@@ -113,10 +113,12 @@
         </div>
     </footer>
     <div class="wrapper__modal" id="modal" popover role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button type="button" class="btn__modal fs-14 ff-bold" popovertarget="modal"
-            popovertargetaction="hide">close</button>
-        <img src="./assets/images/starry-night/gallery.jpg" alt="starry-night portraid" class="img__modal" loading="lazy"
-            decoding="async">
+        <!-- <div class="modal__box"> -->
+            <button type="button" class="btn__modal fs-14 ff-bold" popovertarget="modal"
+                popovertargetaction="hide">close</button>
+            <img src="./assets/images/starry-night/gallery.jpg" alt="starry-night portraid" class="img__modal"
+                loading="lazy" decoding="async">
+        <!-- </div> -->
     </div>
 </body>
 
