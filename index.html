@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="wrapper__header ">
         <h1 class="sr-only">Gallery Slide Show</h1>
         <div class="wrapper__galleriaTitle ">
@@ -28,9 +29,9 @@
             aria-pressed="false" data-state="inactive">Start
             slideshow</button>
     </header>
-    <main class="wrapper__main" id="wrapper__main" role="main">
+    <main class="wrapper__main" id="main-content" role="main">
 
-        <ul class="grid__gallery " id="gallery__list">
+        <ul class="grid__gallery " id="gallery__list" aria-live="polite" aria-label="Artwork gallery">
 
             <!-- #############  Gallery render by Javascript  ################ -->
 
@@ -42,12 +43,12 @@
                 <picture class="hero__view ">
                     <source id="hero__large" srcset=""
                         media="(min-width: 47em)" type="image/jpg">
-                    <img src="" alt="" class=""
+                    <img src="" alt="Hero view of selected artwork" class=""
                         loading="lazy" decoding="async" id="img__hero">
                 </picture>
                 <button type="button" class="btn__view " id="view__image"
                     popovertarget="modal" aria-label="Open full image">
-                    <img src="" alt="" loading="lazy" decoding="async">
+                    <img src="" alt="View full size image" loading="lazy" decoding="async">
                     View image
                 </button>
             </div>
@@ -57,7 +58,7 @@
                     <h3 class="picture__artist " id="picture__artist"></h3>
                 </div>
                 <div class="picture__img">
-                    <img src="" alt="" class="img__artist" loading="lazy"
+                    <img src="" alt="Portrait of the artist" class="img__artist" loading="lazy"
                         decoding="async" id="img__artist">
                 </div>
             </div>
@@ -68,19 +69,18 @@
                 <span class="year__number"></span>
             </div>
             <div class="lead__text">
-                <p class="text__p " id="text__lead">
+                <p class="text__p " id="text__lead" aria-describedby="artwork-description">
                 </p>
                 <a href="" class="lead__wiki "
-                    id="lead__wiki" aria-label="Read more about on Wikipedia">Go to
-                    source</a>
+                    id="lead__wiki" aria-label="Read more about this artwork on Wikipedia">Read more on Wikipedia</a>
             </div>
         </div>
     </aside>
     <div class="footer__line hidden" id="footer__line"></div>
     <footer class="wrapper__footer flex hidden" id="wrapper__footer">
         <div class="">
-            <h1 class="footer__title "></h1>
-            <h2 class="footer__artist  "></h2>
+            <h2 class="footer__title "></h2>
+            <h3 class="footer__artist  "></h3>
         </div>
         <div class="wrapper__playPn play__pn">
             <button type="button" id="btn__preview" aria-label="Previous painting">
@@ -103,8 +103,9 @@
     </footer>
     <div class="wrapper__modal" id="modal" popover role="dialog" aria-modal="true" aria-labelledby="modal-title">
             <button type="button" class="btn__modal " popovertarget="modal"
-                popovertargetaction="hide">close</button>
-            <img src="" alt="" class="img__modal"
+                popovertargetaction="hide">Close</button>
+            <h2 id="modal-title" class="sr-only">Full size artwork view</h2>
+            <img src="" alt="Full size view of the artwork" class="img__modal"
                 loading="lazy" decoding="async">
     </div>
 </body>
