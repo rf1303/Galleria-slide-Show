@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-    <!-- <link rel="stylesheet" href="./assets/css/variables.css"> -->
-    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- <link rel="stylesheet" href="./assets/css/utilitys.css"> -->
     <script type="module" src="./assets/js/main.js" defer></script>
 
     <title>Frontend Mentor | Galleria slideshow site</title>
@@ -18,7 +15,7 @@
 <body>
     <header class="wrapper__header ">
         <h1 class="sr-only">Gallery Slide Show</h1>
-        <div class="title__galleria ">
+        <div class="wrapper__galleriaTitle ">
             <button type="button" class="pointer" id="btn__gallery" aria-expanded="true" aria-label="Open gallery">
                 <svg class="title__galleria " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 48">
                     <path
@@ -43,24 +40,24 @@
         <section class="wrapper__portraid ">
             <div class="wrapper__hero ">
                 <picture class="hero__view ">
-                    <source id="hero__large" srcset="./assets/images/starry-night/hero-large.jpg"
+                    <source id="hero__large" srcset=""
                         media="(min-width: 47em)" type="image/jpg">
-                    <img src="./assets/images/starry-night/hero-small.jpg" alt="Paint Vincent Van Gogh" class=""
+                    <img src="" alt="" class=""
                         loading="lazy" decoding="async" id="img__hero">
                 </picture>
                 <button type="button" class="btn__view " id="view__image"
                     popovertarget="modal" aria-label="Open full image">
-                    <img src="./assets/images/shared/icon-view-image.svg" alt="" loading="lazy" decoding="async">
+                    <img src="" alt="" loading="lazy" decoding="async">
                     View image
                 </button>
             </div>
             <div class="wrapper__picture">
                 <div class="picture__text">
-                    <h2 class="picture__title" id="picture__title">Starry Night</h2>
-                    <h3 class="picture__artist " id="picture__artist">Vincent Van Gogh</h3>
+                    <h2 class="picture__title" id="picture__title"></h2>
+                    <h3 class="picture__artist " id="picture__artist"></h3>
                 </div>
                 <div class="picture__img">
-                    <img src="./assets/images/starry-night/artist.jpg" alt="" class="img__artist" loading="lazy"
+                    <img src="" alt="" class="img__artist" loading="lazy"
                         decoding="async" id="img__artist">
                 </div>
             </div>
@@ -68,20 +65,12 @@
 
         <div class="wrappers__lead ">
             <div class="lead__year">
-                <span class="year__number">1889</span>
+                <span class="year__number"></span>
             </div>
             <div class="lead__text">
                 <p class="text__p " id="text__lead">
-                    Although The Starry Night was painted during the day in Van Gogh's ground-floor
-                    studio, it would be inaccurate to state that the picture was painted from memory.
-                    The view has been identified as the one from his bedroom window, facing east, a
-                    view which Van Gogh painted variations of no fewer than twenty-one times, including
-                    The Starry Night. "Through the iron-barred window," he wrote to his brother, Theo,
-                    around 23 May 1889, "I can see an enclosed square of wheat ... above which, in the
-                    morning, I watch the sun rise in all its glory."
-
                 </p>
-                <a href="https://en.wikipedia.org/wiki/The_Starry_Night" class="lead__wiki "
+                <a href="" class="lead__wiki "
                     id="lead__wiki" aria-label="Read more about on Wikipedia">Go to
                     source</a>
             </div>
@@ -90,8 +79,8 @@
     <div class="footer__line hidden" id="footer__line"></div>
     <footer class="wrapper__footer flex hidden" id="wrapper__footer">
         <div class="">
-            <h1 class="footer__title ">Starry Night</h1>
-            <h2 class="footer__artist  ">Vincent Van Gogh</h2>
+            <h1 class="footer__title "></h1>
+            <h2 class="footer__artist  "></h2>
         </div>
         <div class="wrapper__playPn play__pn">
             <button type="button" id="btn__preview" aria-label="Previous painting">
@@ -116,7 +105,7 @@
         <!-- <div class="modal__box"> -->
             <button type="button" class="btn__modal " popovertarget="modal"
                 popovertargetaction="hide">close</button>
-            <img src="./assets/images/starry-night/gallery.jpg" alt="starry-night portraid" class="img__modal"
+            <img src="" alt="" class="img__modal"
                 loading="lazy" decoding="async">
         <!-- </div> -->
     </div>

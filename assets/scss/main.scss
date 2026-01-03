@@ -19,16 +19,22 @@ body {
   inline-size: min(var(--clamp-gallery), 100%);
   padding-block: var(--cl-2440);
   display: flex;
-  gap: var(--gap, --spc-300);
-  justify-content: var(--jc, space-between);
+  gap: var(--spc-300);
+  justify-content: space-between;
+}
+
+.wrapper__galleriaTitle {
+  background-color: transparent;
 }
 
 .title__galleria {
+  background-color: transparent;
   inline-size: clamp(7.0625rem, 2.9911rem + 8.4821vw, 10.625rem);
   block-size: clamp(2rem, 0.8571rem + 2.381vw, 3rem);
 }
 
 #btn__slide {
+  background-color: transparent;
   color: var(--clr-grey-493);
   font-weight: 700;
   font-size: var(--fs-9);
