@@ -8,7 +8,7 @@ export function thumbnailHtml(dataJson, index) {
                         <img src="${dataJson.images.thumbnail}" class="thumbnail__img"
                             alt="${dataJson.name} by ${dataJson.artist.name}">
                         <figcaption class="thumbnail__figcaption  ">
-                            <h3 class="fig__title">${dataJson.name}</h3>
+                            <h2 class="fig__title">${dataJson.name}</h2>
                             <p class="fig__name">${dataJson.artist.name}</p>
                         </figcaption>
                     </figure>
