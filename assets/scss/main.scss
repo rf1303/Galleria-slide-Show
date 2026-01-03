@@ -45,6 +45,10 @@ body {
 }
 
 @media (min-width: 47.938em) {
+  .wrapper__header {
+    padding-inline: 1.5rem;
+  }
+
   #btn__slide {
     font-size: var(--fs-12);
   }
@@ -504,6 +508,7 @@ body {
     block-size: min(44.5rem, 100%);
   }
 }
+
 .wrapper__modal {
   opacity: 0;
   transform: rotateY(90deg);
