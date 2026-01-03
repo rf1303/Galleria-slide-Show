@@ -1,27 +1,99 @@
-# Frontend Mentor - Galleria slideshow site solution
+# Galleria Slideshow Site
 
-This is a solution to the [Galleria slideshow site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/galleria-slideshow-site-tEA4pwsa6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+A responsive art gallery slideshow website featuring 15 masterpieces from renowned artists. Built with vanilla JavaScript, HTML5, and SCSS, this project showcases an interactive gallery experience with slideshow functionality.
 
-## Table of contents
+## Features
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- **Interactive Gallery Grid**: Browse 15 famous artworks in a responsive grid layout
+- **Detailed Artwork View**: Click any artwork to see detailed information including:
+  - High-resolution hero images with responsive loading
+  - Artist information and portrait
+  - Artwork description and historical context
+  - Year of creation and Wikipedia source links
+- **Slideshow Mode**: Automated slideshow with play/pause controls
+- **Navigation Controls**: Previous/next buttons for manual artwork navigation
+- **Modal View**: Full-screen image viewing capability
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Accessibility**: ARIA labels, semantic HTML5, and keyboard navigation support
+- **Performance**: Lazy loading images and efficient DOM manipulation
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+## Technologies Used
 
-## Overview
+- **HTML5**: Semantic markup with accessibility features
+- **SCSS**: Modular CSS with variables, mixins, and responsive design
+- **JavaScript (ES6+)**: Modern JavaScript with modules and event delegation
+- **CSS Grid & Flexbox**: Modern layout techniques
+- **Web Components**: Native HTML elements like `<picture>` and `<dialog>`
 
-### The challenge
+## Project Structure
 
+```
+├── assets/
+│   ├── css/           # Compiled CSS files
+│   ├── js/            # Modular JavaScript files
+│   ├── scss/          # SCSS source files
+│   ├── images/        # Artwork images organized by piece
+│   └── fonts/         # Custom fonts (Libre Baskerville)
+├── data.json          # Artwork data structure
+├── index.html         # Main HTML file
+└── README.md          # This file
+```
+
+## Artworks Featured
+
+The gallery includes 15 masterpieces such as:
+
+- **Starry Night** (1889) - Vincent Van Gogh
+- **Girl with a Pearl Earring** (1665) - Johannes Vermeer
+- **Guernica** (1937) - Pablo Picasso
+- **Mona Lisa** (1503) - Leonardo da Vinci
+- **The Great Wave off Kanagawa** (1831) - Hokusai
+- And 10 more renowned artworks
+
+## Getting Started
+
+Since this is a static website, no build process is required:
+
+1. Clone the repository
+2. Open `index.html` in your browser
+3. Or use a static server for development:
+   ```bash
+   python -m http.server 8000
+   # or
+   npx serve .
+   ```
+
+## Data Structure
+
+Artwork information is stored in `data.json` with the following structure:
+
+```json
+{
+  "name": "Artwork Title",
+  "year": 1889,
+  "description": "Artwork description...",
+  "source": "Wikipedia URL",
+  "artist": {
+    "image": "path/to/artist/portrait.jpg",
+    "name": "Artist Name"
+  },
+  "images": {
+    "thumbnail": "path/to/thumbnail.jpg",
+    "hero": {
+      "small": "path/to/hero-small.jpg",
+      "large": "path/to/hero-large.jpg"
+    },
+    "gallery": "path/to/gallery.jpg"
+  }
+}
+```
+
+## Code Style
+
+- **JavaScript**: ES6+ modules, arrow functions, event delegation
+- **CSS/SCSS**: BEM-like naming, mobile-first approach, CSS custom properties
+- **HTML5**: Semantic elements, accessibility attributes
+- **Performance**: Lazy loading, minimal DOM manipulation
 
 ### Screenshot
 
@@ -31,79 +103,11 @@ This is a solution to the [Galleria slideshow site challenge on Frontend Mentor]
 ![](./screenshot04.png)
 ![](./screenshot05.png)
 ![](./screenshot06.png)
-![](./screenshot07.png)
-![](./screenshot08.png)
-![](./screenshot09.png)
 
-### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+## Browser Support
 
-## My process
+- Modern browsers supporting ES6+, CSS Grid, and HTML5 features
+- Responsive design works on all screen sizes
+- Accessibility features compatible with screen readers
 
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
-### What I learned
-
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
