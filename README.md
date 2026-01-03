@@ -1,6 +1,5 @@
 # Galleria Slideshow Site
 
-A responsive art gallery slideshow website featuring 15 masterpieces from renowned artists. Built with vanilla JavaScript, HTML5, and SCSS, this project showcases an interactive gallery experience with slideshow functionality.
 
 ## Features
 
@@ -41,14 +40,7 @@ A responsive art gallery slideshow website featuring 15 masterpieces from renown
 
 ## Artworks Featured
 
-The gallery includes 15 masterpieces such as:
-
-- **Starry Night** (1889) - Vincent Van Gogh
-- **Girl with a Pearl Earring** (1665) - Johannes Vermeer
-- **Guernica** (1937) - Pablo Picasso
-- **Mona Lisa** (1503) - Leonardo da Vinci
-- **The Great Wave off Kanagawa** (1831) - Hokusai
-- And 10 more renowned artworks
+The gallery includes 15 masterpieces 
 
 ## Getting Started
 
@@ -88,13 +80,6 @@ Artwork information is stored in `data.json` with the following structure:
 }
 ```
 
-## Code Style
-
-- **JavaScript**: ES6+ modules, arrow functions, event delegation
-- **CSS/SCSS**: BEM-like naming, mobile-first approach, CSS custom properties
-- **HTML5**: Semantic elements, accessibility attributes
-- **Performance**: Lazy loading, minimal DOM manipulation
-
 ### Screenshot
 
 ![](./screenshot01.png)
@@ -105,9 +90,25 @@ Artwork information is stored in `data.json` with the following structure:
 ![](./screenshot06.png)
 
 
-## Browser Support
+### Links
 
-- Modern browsers supporting ES6+, CSS Grid, and HTML5 features
-- Responsive design works on all screen sizes
-- Accessibility features compatible with screen readers
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://rf1303.github.io/Galleria-slide-Show/)
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- SCSS
+- Mobile-first workflow
+- JavaScript vanilla 
+
+## Author
+
+- FreeCodeCamp - [Add your name here](https://www.your-site.com)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Linkedin - [@yourusername](https://www.twitter.com/yourusername)
+
 
