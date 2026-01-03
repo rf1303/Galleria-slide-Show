@@ -4,12 +4,12 @@ export function thumbnailHtml(dataJson, index) {
     return `
             <li class="gallery__item"  data-name="${dataJson.name}">
                 <button type="button" class="gallery__link" data-index="${index}" >
-                    <figure class="thumbnail__card thumb__width ">
+                    <figure class="thumbnail__card ">
                         <img src="${dataJson.images.thumbnail}" class="thumbnail__img"
                             alt="${dataJson.name} by ${dataJson.artist.name}">
                         <figcaption class="thumbnail__figcaption  ">
-                            <h3 class="fig__title fs-24 ff-bold lh-125 h-fit">${dataJson.name}</h3>
-                            <p class="fig__name fs-13 ff-regular lh-125">${dataJson.artist.name}</p>
+                            <h3 class="fig__title">${dataJson.name}</h3>
+                            <p class="fig__name">${dataJson.artist.name}</p>
                         </figcaption>
                     </figure>
                 </button>

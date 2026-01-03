@@ -7,6 +7,7 @@
 
 
 body {
+  font-family: 'baskerville', Georgia, serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +15,13 @@ body {
   overflow-x: hidden;
 }
 
+.wrapper__header {
+  inline-size: min(var(--clamp-gallery), 100%);
+  padding-block: var(--cl-2440);
+  display: flex;
+  gap: var(--gap, --spc-300);
+  justify-content: var(--jc, space-between);
+}
 
 .title__galleria {
   inline-size: clamp(7.0625rem, 2.9911rem + 8.4821vw, 10.625rem);
@@ -22,9 +30,27 @@ body {
 
 #btn__slide {
   color: var(--clr-grey-493);
+  font-weight: 700;
+  font-size: var(--fs-9);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-200);
+  line-height: var(--lh-125);
+  cursor: pointer;
+}
+
+@media (min-width: 47.938em) {
+  #btn__slide {
+    font-size: var(--fs-12);
+  }
+}
+
+.wrapper__main {
+  inline-size: min(var(--clamp-gallery), 100%);
+  padding-block: var(--cl-2440);
 }
 
 .grid__gallery {
+  inline-size: min(var(--clamp-gallery), 100%);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(0, var(--thumb-img)));
   grid-auto-rows: 10px;
@@ -54,6 +80,7 @@ body {
 }
 
 .thumbnail__card {
+  max-inline-size: min(var(--thmb-w), 100%);
   display: grid;
   grid-template-areas: 'images';
   border-radius: var(--spc-100);
@@ -95,7 +122,15 @@ body {
 }
 
 .fig__title {
+  font-size: var(--fs-24);
+  font-weight: 700;
+  line-height: var(--lh-125);
   text-align: start;
+}
+
+.fig__name {
+  font-size: var(--fs-13);
+  line-height: var(--lh-125);
 }
 
 
@@ -146,6 +181,7 @@ body {
 }
 
 .wrapper__hero {
+  inline-size: var(--clamp-hero);
   display: grid;
   grid-template-areas: 'images';
   justify-items: center;
@@ -156,8 +192,9 @@ body {
 }
 
 .btn__view {
-  --gap: var(--spc-200);
-  --jc: center;
+  display: flex;
+  gap: var(--spc-200);
+  justify-content: center;
   background-color: var(--clr-black);
   color: var(--clr-white);
   justify-self: start;
@@ -167,6 +204,11 @@ body {
   block-size: var(--btn-view-b);
   border-radius: var(--spc-4);
   margin: 1rem;
+  font-size: var(--fs-10);
+  font-weight: 700;
+  line-height: var(--lh-110);
+  line-height: var(--lh-200);
+  text-transform: uppercase;
 }
 
 .wrapper__portraid {
@@ -184,6 +226,16 @@ body {
 
 .picture__text {
   padding: var(--spc-300);
+}
+
+.picture__title {
+  color: var(--clr-black);
+  font-weight: 700;
+}
+
+.picture__artist {
+  font-size: var(--fs-15);
+  color: var(--clr-grey-493);
 }
 
 .picture__img {
@@ -226,9 +278,10 @@ body {
   }
 
   .picture__title {
-    font-size: 56px;
-    width: 200px;
+    font-size: var(--spc-700);
+    inline-size: 12.5rem;
   }
+
 
   .picture__artist {
     line-height: 1.35;
@@ -281,7 +334,19 @@ body {
 
 .text__p {
   margin-block-end: var(--spc-800);
+  font-size: var(--fs-14);
+  color: var(--clr-grey-493);
+  font-weight: 700;
+  line-height: var(--lh-200);
 }
+
+.lead__wiki {
+  font-size: var(--fs-9);
+  color: var(--clr-grey-493);
+  font-weight: 700;
+  letter-spacing: var(--ls-200);
+}
+
 
 @media (min-width: 89em) {
   .wrapper__portraid {
@@ -336,7 +401,9 @@ body {
   font-family: var(--ff);
   font-weight: 700;
   font-size: var(--fs-14);
-  line-height: 1.5;
+  line-height: var(--lh-110);
+  letter-spacing: var(--ls-100);
+  color: var(--clr-black);
 }
 
 .footer__artist {
@@ -344,6 +411,13 @@ body {
   font-weight: 400;
   font-size: var(--fs-10);
   line-height: 1.5;
+  color: var(--clr-black);
+}
+
+.wrapper__playPn {
+  display: flex;
+  gap: var(--spc-300);
+  justify-content: var(space-between);
 }
 
 @media (min-width: 47em) {
@@ -398,12 +472,6 @@ body {
   overflow: visible;
 }
 
-// .modal__box {
-//   inline-size: min(var(--clamp-modal), 100%);
-//   margin-inline: auto;
-//
-// }
-
 .wrapper__modal[popover]::backdrop {
   background: rgba(0, 0, 0, .8);
   backdrop-filter: blur(2px);
@@ -412,6 +480,8 @@ body {
 .btn__modal {
   position: absolute;
   background-color: transparent;
+  font-size: var(--fs-14);
+  font-weight: 700;
   text-transform: uppercase;
   inset-block-start: -3rem;
   inset-inline-end: 1rem;
@@ -428,13 +498,6 @@ body {
     block-size: min(44.5rem, 100%);
   }
 }
-
-// @media (min-width: 78em) {
-//   .wrapper__modal[popover] {
-//     /* inline-size: ; */
-//   }
-// }
-
 .wrapper__modal {
   opacity: 0;
   transform: rotateY(90deg);
